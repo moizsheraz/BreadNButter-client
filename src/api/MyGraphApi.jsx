@@ -6,7 +6,7 @@ export const useGetGraphData = () => {
 
   const getGraphData = async () => {
     const response = await fetch(
-      `http://localhost:7000/api/v1/admin/incomeStatement`,
+      `https://bread-n-butter-backend.vercel.app/api/v1/admin/incomeStatement`,
       {
         headers: {
           Authorization: `Bearer ${jwt}`,

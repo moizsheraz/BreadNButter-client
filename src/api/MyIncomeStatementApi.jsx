@@ -6,7 +6,7 @@ import { useAuthContext } from "../../context/AuthContext";
 export const useGetIncome = () => {
   const getIncomeStatement = async () => {
     const response = await fetch(
-      `http://localhost:7000/api/v1/incomeStatement`
+      `https://bread-n-butter-backend.vercel.app/api/v1/incomeStatement`
     );
     if (!response.ok) {
       throw new Error("Error in Getting Income Statement");
@@ -29,7 +29,7 @@ export const useUpdateIncome = () => {
   const updateIncomeStatement = async (data) => {
     // console.log("DATA", data);
     const response = await fetch(
-      `http://localhost:7000/api/v1/editIncomeStatement`,
+      `https://bread-n-butter-backend.vercel.app/api/v1/editIncomeStatement`,
       {
         method: "PUT",
         headers: {
@@ -66,7 +66,7 @@ export const useGetUserIncome = () => {
   const { jwt } = useAuthContext();
   const getUserIncomeStatement = async () => {
     const response = await fetch(
-      `http://localhost:7000/api/v1/user/incomeStatement`,
+      `https://bread-n-butter-backend.vercel.app/api/v1/user/incomeStatement`,
       {
         headers: {
           Authorization: `Bearer ${jwt}`,
@@ -95,7 +95,7 @@ export const useCreateUserIncomeStatement = () => {
 
   const createUserIncomeStatement = async () => {
     const response = await fetch(
-      `http://localhost:7000/api/v1/user/incomeStatement`,
+      `https://bread-n-butter-backend.vercel.app/api/v1/user/incomeStatement`,
       {
         method: "POST",
         headers: {

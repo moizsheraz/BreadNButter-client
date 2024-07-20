@@ -9,7 +9,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 //   const { setAuthUser } = useAuthContext();
 //   const createMyUserRequest = async (user) => {
 //     console.log("USERRRRRR", user);
-//     const response = await fetch(`http://localhost:7000/api/v1/signup`, {
+//     const response = await fetch(`https://bread-n-butter-backend.vercel.app/api/v1/signup`, {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 export const useCreateMyUser = () => {
   const { setAuthUser, setJwt } = useAuthContext();
   const createMyUserRequest = async (user) => {
-    const response = await fetch(`http://localhost:7000/api/v1/signup`, {
+    const response = await fetch(`https://bread-n-butter-backend.vercel.app/api/v1/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -107,7 +107,7 @@ export const useCreateMyUser = () => {
 export const useLoggedMyUser = () => {
   const { setAuthUser, setJwt } = useAuthContext();
   const loginUser = async (user) => {
-    const response = await fetch(`http://localhost:7000/api/v1/login`, {
+    const response = await fetch(`https://bread-n-butter-backend.vercel.app/api/v1/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -155,7 +155,7 @@ export const useLoggedMyUser = () => {
 export const useLogout = () => {
   const { setAuthUser } = useAuthContext();
   const logoutUser = async () => {
-    const response = await fetch("http://localhost:7000/api/v1/logout", {
+    const response = await fetch("https://bread-n-butter-backend.vercel.app/api/v1/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -201,7 +201,7 @@ export const useLogout = () => {
 
 export const useGetAllUsers = () => {
   const getAllUsers = async (id) => {
-    const response = await fetch(`http://localhost:7000/api/v1/getAllUser`);
+    const response = await fetch(`https://bread-n-butter-backend.vercel.app/api/v1/getAllUser`);
     if (!response.ok) {
       throw new Error("Error in Getting All Users");
     }
