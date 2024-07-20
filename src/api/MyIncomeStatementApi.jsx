@@ -5,9 +5,15 @@ import { useAuthContext } from "../../context/AuthContext";
 
 export const useGetIncome = () => {
   const getIncomeStatement = async () => {
-    const response = await fetch(
-      `https://bread-n-butter-backend.vercel.app/api/v1/incomeStatement`
-    );
+    const response = await fetch('https://bread-n-butter-backend.vercel.app/api/v1/user/incomeStatement', {
+      method: 'GET', 
+      headers: {
+        'Authorization': `Bearer ${jwt}`,
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    });
+    
     if (!response.ok) {
       throw new Error("Error in Getting Income Statement");
     }
